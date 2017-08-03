@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>require.js3</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+
+<div class="test1" style="height: 200px;background-color: #46eb32;color: #1a75ff;font-size: 20px">
+    <p></p>
+</div>
+
+<!--先引入require.js-->
+<script src="js/plugin/require.js"></script>
+<!--再引入全局配置-->
+<script src="js/main.js"></script>
+<script>
+    //    用require引入要引入的模块，[]：里面为引入的名称，已经在main.js里面的Paths设置好了
+    //    function（），小括号里面对应[]里面值，按顺序在()给变量名
+    //    jquery一般用 $, b模块有返回值，可以用 b
+    require(['jquery','b'],function ($,b) {
+        $('.test1 p').html(b)
+    })
+</script>
+</body>
+</html>
